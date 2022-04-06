@@ -1,3 +1,3 @@
 # WelfareCommittee
 
-網銀福委特約商店
+特約商店列表
