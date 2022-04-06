@@ -1,0 +1,2 @@
+# WelfareContractedShops
+To be deleted
