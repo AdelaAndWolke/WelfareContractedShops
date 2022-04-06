@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #262626;
+      }
+      .container {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: visible;
+        overflow-x: hidden;
+      }
+      .box {
+        box-sizing: border-box;
+        padding: 15px;
+        border-width: 5px;
+        border-radius: 20px;
+        margin: 10px;
+        width: 250px;
+        text-align: center;
+      }
+      .pic {
+        max-width: 200px;
+        max-height: 150px;
+        width: auto;
+        height: auto;
+      }
+      .shopName {
+        font-size: x-large;
+        font-weight: bold;
+      }
+      .area {
+        font-weight: bold;
+      }
+      .proof {
+        font-size: small;
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .description {
+        font-size: small;
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .hotel {
+        background-color: #ff6239;
+      }
+      .living {
+        background-color: #ffff9d;
+      }
+      .tour {
+        background-color: #bfeba0;
+      }
+      .restaurant {
+        background-color: #79bd8e;
+      }
+      .medical {
+        background-color: #00a388;
+      }
+      .hidden {
+        display: none;
+      }
+      .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 50px;
+      }
+      .filter {
+        margin: 10px;
+        padding: 15px;
+        font-size: medium;
+        font-style: bold;
+        border-radius: 10px;
+        border-width: 5px;
+        border-style: double;
+        border-color: black;
+      }
+      #hotel {
+        background-color: #ff6239;
+      }
+      #living {
+        background-color: #ffff9d;
+      }
+      #tour {
+        background-color: #bfeba0;
+      }
+      #restaurant {
+        background-color: #79bd8e;
+      }
+      #medical {
+        background-color: #00a388;
+      }
+      .place {
+        background-color: cadetblue;
+      }
+      .active {
+        border-color: beige;
+        color: beige;
+      }
+      a {
+        color: #262626;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="button-container">
+      <div>
+        <button class="filter type" id="hotel">住宿</button>
+        <button class="filter type" id="living">生活</button>
+        <button class="filter type" id="tour">旅遊</button>
+        <button class="filter type" id="restaurant">美食</button>
+        <button class="filter type" id="medical">醫療</button>
+      </div>
+      <div>
+        <button class="filter place" id="taipei">台北</button>
+        <button class="filter place" id="taichung">台中</button>
+        <button class="filter place" id="else">其他地區</button>
+      </div>
+    </div>
+    <hr />
+    <div class="container">
+      <div class="box hotel taichung">
+        <p class="shopName">
+          <a href="https://www.hoteldion.com.tw/"> 鼎隆國際商旅 </a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E9%BC%8E%E9%9A%86%E5%9C%8B%E9%9A%9Blogo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A01_%E9%BC%8E%E9%9A%86%E5%9C%8B%E9%9A%9B%E5%95%86%E6%97%85%20.pdf?csf=1&web=1&e=QiEpDe"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel else">
+        <p class="shopName">
+          <a href="https://www.ktchateau.com.tw/"> 墾丁夏都沙灘酒店 </a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E5%A2%BE%E4%B8%81%E5%A4%8F%E9%83%BD%E6%B2%99%E7%81%98%E9%85%92%E5%BA%97.png"
+        />
+        <p class="area">屏東</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A02_%E5%A2%BE%E4%B8%81%E5%A4%8F%E9%83%BD%E6%B2%99%E7%81%98%E9%85%92%E5%BA%97.pdf?csf=1&web=1&e=2jXR8d"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel else">
+        <p class="shopName">
+          <a href="http://www.chateau-rich.com.tw/">夏都富朗酒店</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E5%A4%8F%E9%83%BD%E5%AF%8C%E6%9C%97LOGO.png"
+        />
+        <p class="area">台南</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A03_%E5%8F%B0%E5%8D%97%E5%A4%8F%E9%83%BD%E5%AF%8C%E6%9C%97%E9%85%92%E5%BA%97.pdf?csf=1&web=1&e=gqTVTP"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel else">
+        <p class="shopName">
+          <a href="https://www.tnchateau.com.tw/">夏都城旅(安平館)</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E5%A4%8F%E9%83%BD%E5%9F%8E%E6%97%85logo.jpg"
+        />
+        <p class="area">台南</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A04_%E5%8F%B0%E5%8D%97%E5%A4%8F%E9%83%BD%E5%9F%8E%E6%97%85%E5%AE%89%E5%B9%B3%E9%A4%A8.pdf?csf=1&web=1&e=hEWEPi"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel taipei">
+        <p class="shopName">
+          <a href="https://www.9inehotels.com/">久居棧旅店</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E4%B9%85%E5%B1%85%E6%A3%A7logo.png"
+        />
+        <p class="area">台北</p>
+        <p class="proof">
+          訂房時告知為特約廠商(提供公司名及福委統編)，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A05_%E4%B9%85%E5%B1%85%E6%A3%A7%E6%97%85%E5%BA%97.PDF?csf=1&web=1&e=17ta5s"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel taichung taipei else">
+        <p class="shopName">
+          <a
+            href="https://sites.google.com/hdpalace.com.tw/hdp?fbclid=IwAR0Me4amp-2ho6rQhIS2DhkD4BZgYT9Q7hLYI3KPbow1kxYZTpoN-XSMk4o"
+            >宏都金殿商務飯店</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E5%AE%8F%E9%83%BD%E9%87%91%E5%85%B8logoLOGO.jpg"
+        />
+        <p class="area">全台</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A06_%E5%AE%8F%E9%83%BD%E9%87%91%E6%AE%BF%E5%95%86%E5%8B%99%E9%A3%AF%E5%BA%97.PDF?csf=1&web=1&e=2oxooj"
+          >
+            逢世貿或南港展覽：原價房價打7折+10%服務費</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box hotel taichung">
+        <p class="shopName">
+          <a href="http://www.kinghotel.com.tw/index.php">台中皇星商旅</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E7%9A%87%E6%98%9F%E5%95%86%E6%97%85logo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          中港館及上安館部分房型原房價打5折，不適用於周六、連續假日、春節假期。
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A07_%E5%8F%B0%E4%B8%AD%E7%9A%87%E6%98%9F%E5%95%86%E6%97%85.PDF?csf=1&web=1&e=efemSF"
+            >詳見合約內容
+          </a>
+        </p>
+        <p class="expireDate">到期日：2025/12/31</p>
+      </div>
+      <div class="box hotel taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.hotelday.com.tw/">承億文旅</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E4%BD%8F%E5%AE%BFlogo/%E6%89%BF%E5%84%84%E6%96%87%E6%97%85logo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">
+          訂房時告知為特約廠商，入住時出示員工識別證或名片等證明
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/1.%E4%BD%8F%E5%AE%BF/A08_%E6%89%BF%E5%84%84%E6%96%87%E6%97%85.pdf?csf=1&web=1&e=iGFcMu"
+          >
+            視合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a
+            href="https://www.holiday.com.tw/StoreInfo/StoreDetail.aspx?sid=502"
+            >好樂迪(逢甲店)</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E5%A5%BD%E6%A8%82%E8%BF%AAlogo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          4人以上同行，於週日18:00~週五17:59間進場消費可享買三小時送一小時、買六小時送兩小時…(以此類推)之優惠
+        </p>
+        <p class="expireDate">到期日：2022/12/30</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://www.facebook.com/VMIXKTV.TCXT/">V-mix(西屯店)</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/v-mix-logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          4人以上同行，於週日18:00~週五17:59間進場消費可享買三小時送一小時、買六小時送兩小時…(以此類推)之優惠
+        </p>
+        <p class="expireDate">到期日：2022/12/30</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://www.luggage.com.tw/"
+            >Commodore行李箱 美麗華皮件工業股份有限公司</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/Commodore%20logo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">每年實施乙次為期一個月 特惠(屆時將公告)</p>
+        <p class="description">
+          Commodore全系列產品訂價5折，每年6月份39折優惠專案(缺貨將另公告)，正常使用下，零配件永久免費保固(運費自付)
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://bestcase.com.tw/">Commodore行李箱 佳仕奇有限公司</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E4%BD%B3%E5%A5%87logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          全系列行李箱產品訂價5折，每年11月份實施39折優惠專案(缺貨將另公告)，正常使用下，零配件永久免費保固(運費自付)
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="http://journeysuitcase.weebly.com/"
+            >Commodore行李箱 捷尼皮件有限公司</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E6%8D%B7%E5%B0%BC%E7%9A%AE%E4%BB%B6logo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          全系列產品訂價5折，每年3月份實施39折優惠專案(缺貨將另公告)，正常使用下，零配件永久免費保固
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://www.nowas.com.tw/"
+            >Commodore行李箱 宏聯企業有限公司</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E5%AE%8F%E8%81%AF%E4%BC%81%E6%A5%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          美麗華皮件Commodore戰車旅行箱全系列訂價5折，每年9月份實施39折優惠專案(缺貨將另公告)，正常使用下，零配件永久免費保固，免費宅配(離島除外)
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living else">
+        <p class="shopName">
+          <a href="https://www.facebook.com/merida.okgo/"
+            >日月潭美利達愛騎自行車租賃店</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E7%BE%8E%E5%88%A9%E9%81%94%E8%87%AA%E8%A1%8C%E8%BB%8Alogo.jpg"
+        />
+        <p class="area">南投</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">租車9折，加贈文武廟美雲阿婆茶葉蛋</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://www.facebook.com/abulalady">赤腳丫生態農莊</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8Alogo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件+身分證件</p>
+        <p class="description">餐廳用餐平日85折，假日9折</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="http://www.solomax.com.tw/">台中老虎城店</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/solomax%20logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          配眼鏡享有85折優惠，當月壽星享有免費升級濾藍光鏡片優惠
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung taipei else">
+        <p class="shopName">
+          <a href="http://www.unix-luggage.com/">善誠生活</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E5%96%84%E8%AA%A0%E7%94%9F%E6%B4%BBlogo.PNG"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          全系列行李箱全年度購買享有定價之五折優惠，全系列行李箱每年4/15~5/15為39折優惠專案，免費宅配(離島除外)
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a href="https://www.facebook.com/merrygymtaichung">美力健身</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E7%BE%8E%E5%8A%9B%E5%81%A5%E8%BA%ABlogo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">視合約內容，詳細請至福委會表單查詢</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box living taichung">
+        <p class="shopName">
+          <a
+            href="https://www.google.com/maps/place/%E9%80%A2%E7%94%B23c%E9%87%8F%E8%B2%A9%E5%BA%97/@24.1762363,120.6436384,17z/data=!4m5!3m4!1s0x346917f295ec7e6d:0x9d428f200984f15e!8m2!3d24.1762275!4d120.6458337"
+            >玳莉精品百貨行<br />（逢甲3C量販店）</a
+          >
+        </p>
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">消費滿200元折50元，滿500元則打九折</p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box living taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.easyrent.com.tw/">和運租車</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E5%92%8C%E9%81%8B%E7%A7%9F%E8%BB%8Alogo.jpg"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          (1)線上租車：視合約內容，詳細請至福委會表單查詢
+          (2)店面租車：日租金平日6折、假日7折，<a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/2.%E7%94%9F%E6%B4%BB/B12_%E5%92%8C%E9%81%8B%E7%A7%9F%E8%BB%8A.pdf?csf=1&web=1&e=iSdcT8"
+            >詳見合約內容</a
+          >
+        </p>
+        <p class="expireDate">到期日：2025/12/31</p>
+      </div>
+      <div class="box living taichung taipei else">
+        <p class="shopName">
+          <a href="http://superstarktv.com.tw/">超級巨星KTV</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/%E8%B6%85%E7%B4%9A%E5%B7%A8%E6%98%9Flogo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          包廂費85折優惠，打卡贈送飲料一壺。所有門市皆適用(台中公園店、經貿旗艦店、豐原向陽店、市政河南店、林口旗艦店)
+        </p>
+        <p class="expireDate">到期日：2022/12/18</p>
+      </div>
+      <div class="box living taichung taipei">
+        <p class="shopName">
+          <a href="https://www.dra-3c.com/">Dr. A<br />（3C維修）</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E7%94%9F%E6%B4%BBlogo/Dr.%20A%20logo.PNG"
+        />
+        <p class="area">台中 台北</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          1. 以公司名義：<br />
+          ◎月累計1-10台，以定價9折計<br />◎月累計11-20台，以定價8.5折計<br />
+          ◎月累計21台以上，以定價8折計<br />2. 以個人名義：
+          <br />◎享9折優惠<br />
+          ◎不定期獨家優惠
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box tour taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.besttour.com.tw/e_web/">喜鴻旅行社</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E5%96%9C%E9%B4%BB%E5%81%87%E6%9C%9Flogo.jpg"
+        />
+        <p class="area">全台</p>
+        <p class="proof">
+          至官網登入企業專區(帳號：24438615、密碼24522811)，申請一般會員並綁定企業會員
+        </p>
+        <p class="description">
+          <a
+            href="https://wanintw-my.sharepoint.com/:b:/r/personal/yahsin_chou_wanin_tw/Documents/%E3%80%90%E7%A6%8F%E5%A7%94%E3%80%91111%E5%B9%B4%E5%BA%A6_%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/%E5%B7%B2%E7%B0%BD%E8%A8%82%E5%90%88%E7%B4%84/3.%E6%97%85%E9%81%8A/C01_%E5%96%9C%E9%B4%BB%E6%97%85%E8%A1%8C%E7%A4%BE.pdf?csf=1&web=1&e=URBXSM"
+            >視合約內容</a
+          >
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="https://shop.oldsichuan.com.tw/">老四川巴蜀麻辣燙</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E8%80%81%E5%9B%9B%E5%B7%9D%E5%B7%B4%E8%9C%80%E9%BA%BB%E8%BE%A3%E7%87%99logo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件且至FB網頁按讚</p>
+        <p class="description">消費「單點」滿950以上可享95折優惠</p>
+        <p class="expireDate">到期日：2025/8/14</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="http://www.lingarden.com.tw/gourmet/"
+            >僑園大飯店<br />陶林坊海鮮</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E5%83%91%E5%9C%92%E5%A4%A7%E9%A3%AF%E5%BA%97logo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">餐前憑陶林卡 - 請洽人資部</p>
+        <p class="description">
+          1. 憑卡至陶林坊海鮮消費，享9折優惠<br />
+          2. 憑卡當月壽星招待「焦糖起司蛋糕」一份(出示證件)<br />
+          適用於桌席3桌30位以內<br />
+          不適用於喜宴、特殊節日及其他優惠活動
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a
+            href="https://www.google.com/maps/place/%E7%B5%B1%E5%85%83%E8%B1%86%E8%8A%B1+%E5%85%AC%E7%9B%8A%E5%BA%97/@24.15128,120.6346553,17z/data=!3m1!4b1!4m5!3m4!1s0x34693dc206b75989:0x290acd594cd3ce2e!8m2!3d24.15128!4d120.636844?shorturl=1&shorturl=1"
+            >統元豆花公益店</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E7%B5%B1%E5%85%83%E8%B1%86%E8%8A%B1logo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">全商品(外帶及內用)95折</p>
+        <p class="expireDate">到期日：2025/12/31</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.facebook.com/tingyuan.roastduck/">頂園全鴨坊</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E9%A0%82%E5%9C%92%E5%85%A8%E9%B4%A8%E5%9D%8Alogo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">店內用餐消費享95折優惠，不含酒和飲料</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="http://joes.joymall.com.tw/">冒煙的喬</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E5%86%92%E7%85%99%E7%9A%84%E5%96%AClogo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          平日/假日內用消費9折優惠，單筆購買餐券買三萬送三千
+        </p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://ice-cream-and-drink-shop-1656.business.site/"
+            >布萊恩紅茶(西屯店)</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E5%B8%83%E8%90%8A%E6%81%A9%E7%B4%85%E8%8C%B6logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">全商品(外帶及內用)95折，外送滿300元享95折</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="http://www.motodesushi.com.tw/">元手壽司</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E5%85%83%E6%89%8B%E5%A3%BD%E5%8F%B8logo.jpg"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">消費800元以上套餐，可享95折優惠價</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="http://www.ting-yuan.com.tw/">頂園燒鵝担仔廚房</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E9%A0%82%E5%9C%92%E7%87%92%E9%B5%9D%E6%8B%85%E4%BB%94%E5%BB%9A%E6%88%BF.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">合(桌)菜95折優惠，不含酒和飲料</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="http://www.newbicong.com.tw/">牛比蔥壽喜燒專門店</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E7%89%9B%E6%AF%94%E8%94%A5logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">店內用餐消費可享95折優惠</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://morimoriyakiniku.business.site/">森森燒肉</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E6%A3%AE%E6%A3%AE%E7%87%92%E8%82%89logo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          黎明店、公益店、中科店、洲際店，憑員工識別證消費九折優惠
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.shounichidou.com/main">昭日堂燒肉</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E6%98%AD%E6%97%A5%E5%A0%82%E7%87%92%E8%82%89logo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">憑員工識別證消費九折優惠</p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.shounichidou.com/pothome">鍋煮餐廳</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E6%98%AD%E6%97%A5%E5%A0%82%E9%8D%8B%E7%85%AE%E6%96%99%E7%90%86.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">憑員工識別證消費九折優惠</p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.amo.com.tw/tw/default">Amo阿默典藏蛋糕</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/A%E9%BB%98%E8%9B%8B%E7%B3%95logo.ico"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          1. 各項產品9折優惠 2. 荷蘭貴族手工蛋糕95折優惠 3.
+          Amo咖啡廳單點9折優惠(套餐除外)，加收一成服務費
+        </p>
+        <p class="expireDate">到期日：2024/6/30</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.fatdfc.com/store">胖老爹-河南店</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E8%83%96%E8%80%81%E7%88%B9logo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          不限金額現場購買餐點可打九折優惠
+          外送金額打完九折後達600元即享此外送優惠
+        </p>
+        <p class="expireDate">到期日：無期限</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.chenyunpaochuan.com.tw/">陳允寶泉食品</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E9%99%B3%E5%85%81%E5%AF%B6%E6%B3%89logo.PNG"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">
+          全商品9折(特價品、寄賣品除外)，餐盒、彌月、喜餅另有優惠
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.royalpark.com.tw/">樂雅樂餐廳</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E6%A8%82%E9%9B%85%E6%A8%82%E9%A4%90%E5%BB%B3logo.PNG"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">內用餐飲九折優惠</p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a
+            href="https://www.facebook.com/%E6%B2%83%E5%85%8B%E7%89%9B%E6%8E%92%E6%9C%9D%E5%AF%8C%E5%BA%97-689506117837267/"
+            >沃克牛排(朝富店)</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E6%B2%83%E5%85%8B%E7%89%9B%E6%8E%92logo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">原價88折優惠(10%服務費另計)</p>
+        <p class="expireDate">到期日：2025/12/31</p>
+      </div>
+      <div class="box restaurant taichung">
+        <p class="shopName">
+          <a href="https://www.mrsteak.com.tw/article/85">史堤克牛排(健行店)</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E5%8F%B2%E7%91%85%E5%85%8B%E7%89%9B%E6%8E%92logo.png"
+        />
+        <p class="area">台中</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">95折優惠</p>
+        <p class="expireDate">無期限</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName"><a href="https://www.wulao.com.tw/">無老鍋</a></p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E7%84%A1%E8%80%81%E9%8D%8Blogo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">單筆消費金額滿1000元，即贈田園嫩豚豬乙份</p>
+        <p class="expireDate">到期日：2023/12/31</p>
+      </div>
+      <div class="box restaurant taichung taipei else">
+        <p class="shopName">
+          <a href="https://www.tripodking.com.tw/">鼎王麻辣鍋</a>
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E9%A4%90%E9%A3%B2logo/%E9%BC%8E%E7%8E%8B%E9%BA%BB%E8%BE%A3%E9%8D%8Blogo.png"
+        />
+        <p class="area">全台</p>
+        <p class="proof">消費時出示識別證件</p>
+        <p class="description">單筆消費金額滿1000元，即贈招牌川丸子乙份</p>
+        <p class="expireDate">到期日：2023/12/31</p>
+      </div>
+      <div class="box medical taichung">
+        <p class="shopName">
+          <a
+            href="https://www.facebook.com/%E5%A4%A7%E5%90%8C%E4%B8%AD%E9%86%AB%E8%A8%BA%E6%89%80-134111999991950/"
+            >大同中醫聯合診所</a
+          >
+        </p>
+        <img
+          class="pic"
+          src="http://192.168.12.29/emergency/welfarecommittee/raw/master/logos/%E5%A4%A7%E5%90%8C%E4%B8%AD%E9%86%AB%E8%A8%BA%E6%89%80logo.jpg"
+        />
+        <p class="area">台中</p>
+        <p class="proof">看診時出示識別證件</p>
+        <p class="description">
+          第一次掛號出示識別證，可得親友卡，享六次免掛號費。<br />六次以後掛號費減免50元，自費產品9折優待
+        </p>
+        <p class="expireDate">到期日：2022/12/31</p>
+      </div>
+    </div>
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      const hotelBtn = document.getElementById("hotel");
+      const livingBtn = document.getElementById("living");
+      const tourBtn = document.getElementById("tour");
+      const restaurantBtn = document.getElementById("restaurant");
+      const medicalBtn = document.getElementById("medical");
+      const taipeiBtn = document.getElementById("taipei");
+      const taichungBtn = document.getElementById("taichung");
+      const elseBtn = document.getElementById("else");
+
+      let isHotel = false;
+      let isLiving = false;
+      let isTour = false;
+      let isRestaurant = false;
+      let isMedical = false;
+      let isInTaipei = false;
+      let isInTaichung = false;
+      let isElseWhere = false;
+
+      let typeFilterList = [];
+      let areaFilterList = [];
+
+      hotelBtn.addEventListener("click", () => {
+        isHotel = !isHotel;
+        RenewPage(isHotel, hotelBtn, "hotel", typeFilterList);
+      });
+      livingBtn.addEventListener("click", () => {
+        isLiving = !isLiving;
+        RenewPage(isLiving, livingBtn, "living", typeFilterList);
+      });
+      tourBtn.addEventListener("click", () => {
+        isTour = !isTour;
+        RenewPage(isTour, tourBtn, "tour", typeFilterList);
+      });
+      restaurantBtn.addEventListener("click", () => {
+        isRestaurant = !isRestaurant;
+        RenewPage(isRestaurant, restaurantBtn, "restaurant", typeFilterList);
+      });
+      medicalBtn.addEventListener("click", () => {
+        isMedical = !isMedical;
+        RenewPage(isMedical, medicalBtn, "medical", typeFilterList);
+      });
+      taipeiBtn.addEventListener("click", () => {
+        isInTaipei = !isInTaipei;
+        RenewPage(isInTaipei, taipeiBtn, "taipei", areaFilterList);
+      });
+      taichungBtn.addEventListener("click", () => {
+        isInTaichung = !isInTaichung;
+        RenewPage(isInTaichung, taichungBtn, "taichung", areaFilterList);
+      });
+      elseBtn.addEventListener("click", () => {
+        isElseWhere = !isElseWhere;
+        RenewPage(isElseWhere, elseBtn, "else", areaFilterList);
+      });
+
+      function RenewPage(isActive, button, filterContent, list) {
+        if (isActive) {
+          button.classList.add("active");
+          list.push(filterContent);
+        } else {
+          button.classList.remove("active");
+          if (list.includes(filterContent)) {
+            let index = list.indexOf(filterContent);
+            list.splice(index, 1);
+          }
+        }
+        FilterBox();
+      }
+
+      function FilterBox() {
+        boxes.forEach((element) => {
+          let typeMatched = typeFilterList.length != 0 ? false : true;
+          let areaMatched = true;
+          typeFilterList.forEach((item) => {
+            if (element.classList.contains(item)) {
+              typeMatched = true;
+            }
+          });
+          areaFilterList.forEach((item) => {
+            if (!element.classList.contains(item)) {
+              areaMatched = false;
+            }
+          });
+          if (typeMatched && areaMatched) {
+            element.classList.remove("hidden");
+          } else {
+            element.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
